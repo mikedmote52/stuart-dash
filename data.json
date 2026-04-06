@@ -1,0 +1,292 @@
+{
+  "lastUpdated": "2026-04-04T06:42:31.876807+00:00",
+  "property": {
+    "address": "2322 Stuart St",
+    "subtitle": "Berkeley Rental Manager",
+    "rooms": [
+      {
+        "name": "Room A (King)",
+        "price": 1650,
+        "status": "available",
+        "availableDate": "2026-08-01"
+      },
+      {
+        "name": "Room B (Queen)",
+        "price": 1650,
+        "status": "available",
+        "availableDate": "2026-08-01"
+      }
+    ]
+  },
+  "stats": {
+    "live": 7,
+    "pending": 1,
+    "prospects": 2,
+    "actions": 7
+  },
+  "actions": [
+    {
+      "id": "act-1",
+      "icon": "\ud83d\udcac",
+      "priority": "Wenfamus Maximus",
+      "text": "Draft reply below awaiting Mike's approval before sending.",
+      "source": "prospects"
+    },
+    {
+      "id": "act-2",
+      "icon": "\ud83d\udcac",
+      "priority": "Julian Flanagan",
+      "text": "Awaiting Julian's screening responses.",
+      "source": "prospects"
+    },
+    {
+      "id": "act-3",
+      "icon": "\u26a0\ufe0f",
+      "priority": "Zillow",
+      "text": "Listed 1 day. 1 NEW lead as of 03/29 \u2014 lead details inaccessible via browser (bot detection). Mike must log in directly to check.",
+      "source": "listings"
+    },
+    {
+      "id": "act-4",
+      "icon": "\ud83d\udd34",
+      "priority": "Apartments.com",
+      "text": "Site error on \"Add Property\" with room listings.",
+      "source": "listings"
+    },
+    {
+      "id": "act-5",
+      "icon": "\u26a0\ufe0f",
+      "priority": "Facebook Marketplace",
+      "text": "Listed 12/31/2025, 180 clicks. FB suggests renewal. Wenfamus responded 04/01 with screening questions. Patricia replied \"hi yes\" \u2014 needs detailed follow-up. Terrail convo (Fri), Reggie (Thu photo sent), Nick (3/18).",
+      "source": "listings"
+    },
+    {
+      "id": "act-6",
+      "icon": "\u26a0\ufe0f",
+      "priority": "Bay Area/SF Housing (80.5K)",
+      "text": "Post never appeared \u2014 rejected or not submitted. Needs repost (but only 1 day old; flag for repost if still missing at day 5).",
+      "source": "listings"
+    },
+    {
+      "id": "act-7",
+      "icon": "\u26a0\ufe0f",
+      "priority": "Oakland Housing (35.3K)",
+      "text": "Post never appeared \u2014 rejected or not submitted. Needs repost when confirmed rejected.",
+      "source": "listings"
+    }
+  ],
+  "listings": [
+    {
+      "id": "lst-1",
+      "name": "Craigslist",
+      "detail": "Pre-existing \u00b7 Posted 03/14, last updated 03/28. 15 days old as of 03/29. No renewal needed until ~04/27.",
+      "status": "live",
+      "category": "platform",
+      "notes": "Posted 03/14, last updated 03/28. 15 days old as of 03/29. No renewal needed until ~04/27."
+    },
+    {
+      "id": "lst-2",
+      "name": "Zillow",
+      "detail": "03/28/2026 \u00b7 Listed 1 day. 1 NEW lead as of 03/29 \u2014 lead details inaccessible via browser (bot detection). Mike must log in directly to check.",
+      "status": "warn",
+      "category": "platform",
+      "notes": "Listed 1 day. 1 NEW lead as of 03/29 \u2014 lead details inaccessible via browser (bot detection). Mike must log in directly to check."
+    },
+    {
+      "id": "lst-3",
+      "name": "SpareRoom",
+      "detail": "04/01/2026 \u00b7 Ref #103057608. Ad confirmed live by SpareRoom 04/03 4:00 AM (passed moderation). Free 7-day upgrade applied 04/02. 1 prospect message received (Julian Flanagan, 04/02). Screening response sent 04/03 PM.",
+      "status": "live",
+      "category": "platform",
+      "notes": "Ref #103057608. Ad confirmed live by SpareRoom 04/03 4:00 AM (passed moderation). Free 7-day upgrade applied 04/02. 1 prospect message received (Julian Flanagan, 04/02). Screening response sent 04/03 PM."
+    },
+    {
+      "id": "lst-4",
+      "name": "CalRentals (och.berkeley.edu)",
+      "detail": "03/30/2026 \u00b7 $30/mo paid. APPROVED 03/30 10:47 AM. Listing now actively advertised on UC Berkeley Off-Campus Rental Services.",
+      "status": "live",
+      "category": "platform",
+      "notes": "$30/mo paid. APPROVED 03/30 10:47 AM. Listing now actively advertised on UC Berkeley Off-Campus Rental Services."
+    },
+    {
+      "id": "lst-5",
+      "name": "Apartments.com",
+      "detail": "03/28/2026 \u00b7 Site error on \"Add Property\" with room listings.",
+      "status": "error",
+      "category": "platform",
+      "notes": "Site error on \"Add Property\" with room listings."
+    },
+    {
+      "id": "lst-6",
+      "name": "Facebook Marketplace",
+      "detail": "Pre-existing \u00b7 Listed 12/31/2025, 180 clicks. FB suggests renewal. Wenfamus responded 04/01 with screening questions. Patricia replied \"hi yes\" \u2014 needs detailed follow-up. Terrail convo (Fri), Reggie (Thu photo sent), Nick (3/18).",
+      "status": "warn",
+      "category": "platform",
+      "notes": "Listed 12/31/2025, 180 clicks. FB suggests renewal. Wenfamus responded 04/01 with screening questions. Patricia replied \"hi yes\" \u2014 needs detailed follow-up. Terrail convo (Fri), Reggie (Thu photo sent), Nick (3/18)."
+    },
+    {
+      "id": "lst-16",
+      "name": "Furnished Finder",
+      "detail": "$200 cost, decide later.",
+      "status": "inactive",
+      "category": "platform",
+      "notes": "$200 cost, decide later."
+    },
+    {
+      "id": "fbg-7",
+      "name": "UC Berkeley Housing, Rooms, Apts (47.6K)",
+      "detail": "03/28/2026 \u00b7 Post confirmed live (1 day old). CL link comment DECLINED \u2014 group bans external links. No prospect comments.",
+      "status": "live",
+      "category": "facebook_group",
+      "notes": "Post confirmed live (1 day old). CL link comment DECLINED \u2014 group bans external links. No prospect comments."
+    },
+    {
+      "id": "fbg-8",
+      "name": "UC Berkeley Off-Campus (89.7K)",
+      "detail": "03/28/2026 \u00b7 Post live (1 day old) + CL link comment active. No prospect comments.",
+      "status": "live",
+      "category": "facebook_group",
+      "notes": "Post live (1 day old) + CL link comment active. No prospect comments."
+    },
+    {
+      "id": "fbg-9",
+      "name": "Berkeley CA Rentals (6.5K)",
+      "detail": "03/28/2026 \u00b7 Post live (1 day old) + CL link comment active. No prospect comments.",
+      "status": "live",
+      "category": "facebook_group",
+      "notes": "Post live (1 day old) + CL link comment active. No prospect comments."
+    },
+    {
+      "id": "fbg-10",
+      "name": "Berkeley & Bay Area (16.4K)",
+      "detail": "03/28/2026 \u00b7 Post live (1 day old) + CL link comment active. No prospect comments.",
+      "status": "live",
+      "category": "facebook_group",
+      "notes": "Post live (1 day old) + CL link comment active. No prospect comments."
+    },
+    {
+      "id": "fbg-11",
+      "name": "Bay Area/SF Housing (80.5K)",
+      "detail": "03/29/2026 \u00b7 Post never appeared \u2014 rejected or not submitted. Needs repost (but only 1 day old; flag for repost if still missing at day 5).",
+      "status": "warn",
+      "category": "facebook_group",
+      "notes": "Post never appeared \u2014 rejected or not submitted. Needs repost (but only 1 day old; flag for repost if still missing at day 5)."
+    },
+    {
+      "id": "fbg-12",
+      "name": "Bay Area Rooms & Apts",
+      "detail": "03/28/2026 \u00b7 Group deleted or restricted.",
+      "status": "inactive",
+      "category": "facebook_group",
+      "notes": "Group deleted or restricted."
+    },
+    {
+      "id": "fbg-13",
+      "name": "Affordable Housing Bay Area (35.2K)",
+      "detail": "03/28/2026 \u00b7 Private group, need to join and request.",
+      "status": "inactive",
+      "category": "facebook_group",
+      "notes": "Private group, need to join and request."
+    },
+    {
+      "id": "fbg-14",
+      "name": "SF Bay Area Housing (218.4K)",
+      "detail": "03/28/2026 \u00b7 Posted with CL link, pending admin review as of 03/28. Status unknown 03/29.",
+      "status": "pending",
+      "category": "facebook_group",
+      "notes": "Posted with CL link, pending admin review as of 03/28. Status unknown 03/29."
+    },
+    {
+      "id": "fbg-15",
+      "name": "Oakland Housing (35.3K)",
+      "detail": "03/29/2026 \u00b7 Post never appeared \u2014 rejected or not submitted. Needs repost when confirmed rejected.",
+      "status": "warn",
+      "category": "facebook_group",
+      "notes": "Post never appeared \u2014 rejected or not submitted. Needs repost when confirmed rejected."
+    }
+  ],
+  "prospects": [
+    {
+      "id": "prsp-1",
+      "name": "Patricia (last name unknown)",
+      "source": "Facebook Marketplace",
+      "status": "STALE",
+      "date": "03/29/2026",
+      "notes": "Asked for video tour 03/29. Mike replied \"hi yes\" at 12:49. No response in 5 days. Archived 04/03 weekly audit.",
+      "actionNeeded": "Patricia may need a more detailed follow-up since Mike's \"hi yes\" didn't include screening questions or propose times. Recommend sending the detailed draft below if she doesn't respond by 03/31.",
+      "active": false
+    },
+    {
+      "id": "prsp-2",
+      "name": "Wenfamus Maximus",
+      "source": "Facebook Marketplace",
+      "status": "RESPONDED",
+      "date": "03/29/2026",
+      "notes": "Screening questions sent 04/02. No response yet (1 day). Monitor through 04/05.",
+      "actionNeeded": "Draft reply below awaiting Mike's approval before sending.",
+      "active": true
+    },
+    {
+      "id": "prsp-3",
+      "name": "Julian Flanagan",
+      "source": "SpareRoom",
+      "status": "SCREENING",
+      "date": "04/02/2026",
+      "notes": "Incoming Berkeley grad student. Self-described quiet, tidy, housemate experience. Screening questions sent 04/03 (evening sweep).",
+      "actionNeeded": "Awaiting Julian's screening responses.",
+      "active": true
+    }
+  ],
+  "tours": {
+    "scheduled": [],
+    "completed": []
+  },
+  "system": [
+    {
+      "name": "Daily Check Task",
+      "detail": "Runs 9 AM daily",
+      "status": "live"
+    },
+    {
+      "name": "Email Monitoring",
+      "detail": "berkeleystuarthouse@gmail.com",
+      "status": "live"
+    },
+    {
+      "name": "iMessage Monitoring",
+      "detail": "(714) 612-0723 \u00b7 needs Claude app restart",
+      "status": "error"
+    },
+    {
+      "name": "Facebook Messenger",
+      "detail": "Manual check via Chrome MCP",
+      "status": "pending"
+    }
+  ],
+  "log": {
+    "date": "04/03/2026",
+    "title": "EVENING SWEEP (approx. 6:00 PM)",
+    "worked": [
+      "SpareRoom screening response sent to Julian Flanagan (incoming Berkeley grad student, August 2026, quiet/tidy/housemate experience) \u2014 strong lead, best prospect since launch",
+      "Confirmed SpareRoom listing #103057608 LIVE with \"NEW\" badge; passed moderation at 4:00 AM per email notification; free 7-day upgrade applied 04/02",
+      "Confirmed Craigslist listing LIVE (20 days old, renewal ~04/27)",
+      "FB Marketplace inbox checked \u2014 Wenfamus screening questions still pending reply (sent 04/02, 1 day old, within normal window)",
+      "Patricia correctly archived in morning audit; no further outreach sent (appropriate)",
+      "prospects.md and listing_copy.md both updated with Julian Flanagan as new Prospect #8"
+    ],
+    "failed": [
+      "SpareRoom inbox navigation issue: after typing in reply box and scrolling, the reply form went off-screen. Workaround: reload the thread URL to reset layout, then interact with reply box before scrolling. Flag for improvement.",
+      "SpareRoom /my_spareroom/messages URL returns 404 \u2014 correct path is /roommate/mythreads_beta.pl (accessed via envelope icon click)",
+      "CalRentals inbox not directly checked this sweep (no dedicated URL known; rely on email forwarding to berkeleystuarthouse@gmail.com)",
+      "FB Bay Area/SF Housing (218.4K group) still shows PENDING APPROVAL from 03/28 \u2014 needs status check",
+      "FB Oakland Housing still shows NOT POSTED \u2014 repost needed when confirmed rejected"
+    ],
+    "improvement": "SpareRoom \"NEW\" badge will expire shortly \u2014 check if there's a way to feature or bump the listing now that the 7-day free upgrade is active. Also consider posting to CalRentals bulletin board separately from the listing, targeting incoming fall grad students directly.",
+    "metrics": {
+      "SpareRoom": "1 inquiry received (Julian Flanagan, 04/02) \u2014 2 days live",
+      "Craigslist": "still live, no new data visible",
+      "FB Marketplace": "Wenfamus pending, Patricia archived",
+      "Total active prospects": "2 (Wenfamus RESPONDED, Julian SCREENING)"
+    }
+  }
+}
