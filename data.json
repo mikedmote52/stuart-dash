@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-06T07:30:02.443778+00:00",
+  "lastUpdated": "2026-04-06T18:00:00.000000+00:00",
   "property": {
     "address": "2322 Stuart St",
     "subtitle": "Berkeley Rental Manager",
@@ -19,73 +19,24 @@
     ]
   },
   "stats": {
-    "live": 7,
-    "pending": 0,
+    "live": 13,
+    "pending": 1,
     "prospects": 3,
-    "actions": 9
+    "actions": 2
   },
   "actions": [
     {
       "id": "act-1",
-      "icon": "\ud83d\udcac",
-      "priority": "Julian Flanagan",
-      "text": "REPLY TONIGHT. Julian has been waiting 8+ hours. He's available Mon/Tue/Wed/Fri evening this week (04/06-04/10). Suggest Tuesday 04/07 or Wednesday 04/08 evening to give Mike prep time. Julian was last active on SpareRoom 2 hours ago (as of 6 PM PDT 04/05). Every hour of delay risks losing this prospect.",
+      "icon": "⏳",
+      "priority": "Julian Flanagan - Tour",
+      "text": "Mike proposed Sunday virtual tour 04/06 3:47 AM EDT. Awaiting Julian's confirmation. Ball is in Julian's court — no action needed unless no reply by Monday.",
       "source": "prospects"
     },
     {
       "id": "act-2",
-      "icon": "\ud83d\udcac",
-      "priority": "Thomas Thuillier",
-      "text": "Reply with screening confirmation and tour scheduling. Thomas is an excellent prospect \u2014 LBL staff scientist = very stable income, quiet/respectful, seeking 1-year lease. Suggest Friday evening tour if Mike is back in Berkeley.",
-      "source": "prospects"
-    },
-    {
-      "id": "act-3",
-      "icon": "\ud83d\udcac",
-      "priority": "Jan Sch\u00fctte-Engel",
-      "text": "Reply confirming availability, answer flooring question (which room has carpet vs hardwood), and offer tour time. Jan is a strong prospect \u2014 Berkeley postdoc = 2-5 year funded position.",
-      "source": "prospects"
-    },
-    {
-      "id": "act-4",
-      "icon": "\u26a0\ufe0f",
-      "priority": "Zillow",
-      "text": "Bot detection blocks browser checks. Mike must log in directly to check Zillow inbox.",
-      "source": "listings"
-    },
-    {
-      "id": "act-5",
-      "icon": "\ud83d\udd34",
-      "priority": "Apartments.com",
-      "text": "Site error on \"Add Property\" with room listings. 8 days unresolved.",
-      "source": "listings"
-    },
-    {
-      "id": "act-6",
-      "icon": "\u26a0\ufe0f",
+      "icon": "⚠️",
       "priority": "Facebook Marketplace",
-      "text": "Listed 12/31/2025, 97 days old, 196 clicks (+7 today). FB still prompting renewal \u2014 RENEW OVERDUE. No new messages. Wenfamus archived 04/05. Patricia archived 04/03.",
-      "source": "listings"
-    },
-    {
-      "id": "act-7",
-      "icon": "\u26a0\ufe0f",
-      "priority": "Bay Area/SF Housing (80.5K)",
-      "text": "Post never appeared after 7 days \u2014 confirmed missing. Repost manually.",
-      "source": "listings"
-    },
-    {
-      "id": "act-8",
-      "icon": "\u26a0\ufe0f",
-      "priority": "SF Bay Area Housing (218.4K)",
-      "text": "Pending approval since 03/28 (8 days). Likely rejected or lost. Repost without CL link.",
-      "source": "listings"
-    },
-    {
-      "id": "act-9",
-      "icon": "\u26a0\ufe0f",
-      "priority": "Oakland Housing (35.3K)",
-      "text": "Post never appeared after 7 days \u2014 repost needed.",
+      "text": "Renewal broken (98 days, ~200 clicks). Consider delete + relist strategy. 0 quality conversions despite high traffic.",
       "source": "listings"
     }
   ],
@@ -93,130 +44,130 @@
     {
       "id": "lst-1",
       "name": "Craigslist",
-      "detail": "Pre-existing \u00b7 Posted 03/14, confirmed live 04/05. 22 days old. No renewal needed until ~May 1 (~26 days out).",
+      "detail": "Pre-existing · Posted 03/14, 23 days old. Renewal ~05/01. Generated 2 strong prospects this week (Thomas, Jan).",
       "status": "live",
       "category": "platform",
-      "notes": "Posted 03/14, confirmed live 04/05. 22 days old. No renewal needed until ~May 1 (~26 days out)."
+      "notes": "Best-performing platform for lead quality. 2 new prospects this week."
     },
     {
       "id": "lst-2",
       "name": "Zillow",
-      "detail": "03/28/2026 \u00b7 Bot detection blocks browser checks. Mike must log in directly to check Zillow inbox.",
-      "status": "warn",
+      "detail": "03/28/2026 · Bot detection RESOLVED 04/06. Logged in, checked — no new leads or messages.",
+      "status": "live",
       "category": "platform",
-      "notes": "Bot detection blocks browser checks. Mike must log in directly to check Zillow inbox."
+      "notes": "Bot detection resolved. 0 active prospects."
     },
     {
       "id": "lst-3",
       "name": "SpareRoom",
-      "detail": "04/01/2026 \u00b7 Ref #103057608. Ad confirmed live 04/05. Free 7-day upgrade expires 04/09 3:11 PM EDT (4 days left). **\ud83d\udea8 Julian replied 04/05 10:47 AM EDT \u2014 NO REPLY SENT YET (8+ hrs). Mike must confirm tour time TONIGHT.**",
+      "detail": "04/01/2026 · Ref #103057608. Live with upgrade (expires 04/09, 3 days left). Julian tour scheduling in progress.",
       "status": "live",
       "category": "platform",
-      "notes": "Ref #103057608. Ad confirmed live 04/05. Free 7-day upgrade expires 04/09 3:11 PM EDT (4 days left). **\ud83d\udea8 Julian replied 04/05 10:47 AM EDT \u2014 NO REPLY SENT YET (8+ hrs). Mike must confirm tour time TONIGHT.**"
+      "notes": "Best single prospect (Julian). Upgrade renewal decision needed by 04/07."
     },
     {
       "id": "lst-4",
       "name": "CalRentals (och.berkeley.edu)",
-      "detail": "03/30/2026 \u00b7 $30/mo paid. APPROVED 03/30. 6 days live.",
+      "detail": "03/30/2026 · $30/mo paid. APPROVED. 7 days live. No inquiries yet.",
       "status": "live",
       "category": "platform",
-      "notes": "$30/mo paid. APPROVED 03/30. 6 days live."
+      "notes": "$30/mo paid. No inquiries visible."
     },
     {
       "id": "lst-5",
       "name": "Apartments.com",
-      "detail": "03/28/2026 \u00b7 Site error on \"Add Property\" with room listings. 8 days unresolved.",
+      "detail": "03/28/2026 · Site error on 'Add Property' — 9 days unresolved. Low priority.",
       "status": "error",
       "category": "platform",
-      "notes": "Site error on \"Add Property\" with room listings. 8 days unresolved."
+      "notes": "Site error unresolved. Low priority — other platforms producing leads."
     },
     {
       "id": "lst-6",
       "name": "Facebook Marketplace",
-      "detail": "Pre-existing \u00b7 Listed 12/31/2025, 97 days old, 196 clicks (+7 today). FB still prompting renewal \u2014 RENEW OVERDUE. No new messages. Wenfamus archived 04/05. Patricia archived 04/03.",
+      "detail": "Pre-existing · 98 days old, ~200 clicks. Renewal broken. 0 quality conversions. Consider delete + relist.",
       "status": "warn",
       "category": "platform",
-      "notes": "Listed 12/31/2025, 97 days old, 196 clicks (+7 today). FB still prompting renewal \u2014 RENEW OVERDUE. No new messages. Wenfamus archived 04/05. Patricia archived 04/03."
+      "notes": "Worst ROI — high clicks, zero quality leads. All prospects archived."
     },
     {
       "id": "lst-16",
       "name": "Furnished Finder",
-      "detail": "$200 cost, decide later. Luisa Prieto from FF sent follow-up email 04/04 (sales outreach).",
+      "detail": "$200 cost, decide later.",
       "status": "inactive",
       "category": "platform",
-      "notes": "$200 cost, decide later. Luisa Prieto from FF sent follow-up email 04/04 (sales outreach)."
+      "notes": "$200 cost, decide later."
     },
     {
       "id": "fbg-7",
-      "name": "UC Berkeley Housing, Rooms, Apts (47.6K)",
-      "detail": "03/28/2026 \u00b7 Post 8 days old. CL link comment DECLINED \u2014 group bans external links. No prospect comments visible.",
+      "name": "UC Berkeley Housing (47.7K)",
+      "detail": "04/06/2026 · REPOSTED weekly audit. Admin approved immediately. No CL link.",
       "status": "live",
       "category": "facebook_group",
-      "notes": "Post 8 days old. CL link comment DECLINED \u2014 group bans external links. No prospect comments visible."
+      "notes": "Fresh post 04/06. Admin approved."
     },
     {
       "id": "fbg-8",
-      "name": "UC Berkeley Off-Campus (89.7K)",
-      "detail": "03/28/2026 \u00b7 Post 8 days old + CL link comment active. No prospect comments visible.",
+      "name": "UC Berkeley Off-Campus (90.0K)",
+      "detail": "04/06/2026 · REPOSTED weekly audit. Live immediately.",
       "status": "live",
       "category": "facebook_group",
-      "notes": "Post 8 days old + CL link comment active. No prospect comments visible."
+      "notes": "Fresh post 04/06."
     },
     {
       "id": "fbg-9",
-      "name": "Berkeley CA Rentals (6.5K)",
-      "detail": "03/28/2026 \u00b7 Post 8 days old + CL link comment active. No prospect comments visible.",
+      "name": "Berkeley CA Rentals (6.6K)",
+      "detail": "04/06/2026 · REPOSTED weekly audit with CL link.",
       "status": "live",
       "category": "facebook_group",
-      "notes": "Post 8 days old + CL link comment active. No prospect comments visible."
+      "notes": "Fresh post 04/06 with CL link."
     },
     {
       "id": "fbg-10",
       "name": "Berkeley & Bay Area (16.4K)",
-      "detail": "03/28/2026 \u00b7 Post 8 days old + CL link comment active. No prospect comments visible.",
+      "detail": "04/06/2026 · REPOSTED weekly audit with CL link.",
       "status": "live",
       "category": "facebook_group",
-      "notes": "Post 8 days old + CL link comment active. No prospect comments visible."
+      "notes": "Fresh post 04/06 with CL link."
     },
     {
       "id": "fbg-11",
-      "name": "Bay Area/SF Housing (80.5K)",
-      "detail": "04/04/2026 \u00b7 Post never appeared after 7 days \u2014 confirmed missing. Repost manually.",
-      "status": "warn",
+      "name": "Bay Area/SF Housing (81.4K)",
+      "detail": "04/06/2026 · REPOSTED weekly audit. No CL link.",
+      "status": "live",
       "category": "facebook_group",
-      "notes": "Post never appeared after 7 days \u2014 confirmed missing. Repost manually."
+      "notes": "Fresh post 04/06. No CL link."
     },
     {
       "id": "fbg-12",
       "name": "Bay Area Rooms & Apts",
-      "detail": "03/28/2026 \u00b7 Group deleted or restricted. Remove from rotation.",
+      "detail": "Group deleted or restricted. Removed from rotation.",
       "status": "inactive",
       "category": "facebook_group",
-      "notes": "Group deleted or restricted. Remove from rotation."
+      "notes": "Group deleted or restricted."
     },
     {
       "id": "fbg-13",
       "name": "Affordable Housing Bay Area (35.2K)",
-      "detail": "03/28/2026 \u00b7 Private group, need to join and request.",
+      "detail": "Private group, need to join and request.",
       "status": "inactive",
       "category": "facebook_group",
       "notes": "Private group, need to join and request."
     },
     {
       "id": "fbg-14",
-      "name": "SF Bay Area Housing (218.4K)",
-      "detail": "04/04/2026 \u00b7 Pending approval since 03/28 (8 days). Likely rejected or lost. Repost without CL link.",
-      "status": "warn",
+      "name": "SF Bay Area Housing (220.0K)",
+      "detail": "04/06/2026 · REPOSTED weekly audit. No CL link. Previously rejected.",
+      "status": "live",
       "category": "facebook_group",
-      "notes": "Pending approval since 03/28 (8 days). Likely rejected or lost. Repost without CL link."
+      "notes": "Fresh post 04/06. No CL link."
     },
     {
       "id": "fbg-15",
-      "name": "Oakland Housing (35.3K)",
-      "detail": "04/04/2026 \u00b7 Post never appeared after 7 days \u2014 repost needed.",
-      "status": "warn",
+      "name": "Oakland Housing (35.5K)",
+      "detail": "04/06/2026 · REPOSTED weekly audit. No CL link. Pending admin approval.",
+      "status": "pending",
       "category": "facebook_group",
-      "notes": "Post never appeared after 7 days \u2014 repost needed."
+      "notes": "Fresh post 04/06. Pending approval."
     }
   ],
   "prospects": [
@@ -224,31 +175,112 @@
       "id": "prsp-1",
       "name": "Julian Flanagan",
       "source": "SpareRoom",
-      "status": "TOUR SCHEDULING \ud83d\udea8",
+      "status": "ACTIVE - TOUR SCHEDULING",
       "date": "04/02/2026",
-      "notes": "Berkeley Biophysics PhD student, age 21. Replied 04/05 10:47 AM EDT \u2014 available any evening this week except Thursday for virtual tour. **\u26a0\ufe0f NO REPLY SENT YET \u2014 8+ HOURS WAITING. CRITICAL: Mike must reply TONIGHT to confirm a specific evening (Tue or Wed recommended).** Last active on SpareRoom: 2 hours ago as of 6 PM sweep. Best prospect to date.",
-      "actionNeeded": "REPLY TONIGHT. Julian has been waiting 8+ hours. He's available Mon/Tue/Wed/Fri evening this week (04/06-04/10). Suggest Tuesday 04/07 or Wednesday 04/08 evening to give Mike prep time. Julian was last active on SpareRoom 2 hours ago (as of 6 PM PDT 04/05). Every hour of delay risks losing this prospect.",
+      "profile": "Age 21, incoming Berkeley Biophysics PhD student, currently out of state",
+      "matchAssessment": "EXCELLENT - 5+ year funded program, quiet/tidy, wants year lease with renewal, Aug 1 move-in aligns perfectly, values BART access + parking + peaceful environment. Best prospect to date.",
+      "lastMessage": "Mike proposed Sunday virtual tour (04/06 3:47 AM EDT). Julian hasn't read yet. Awaiting confirmation.",
+      "conversationStage": "6 messages in thread. Screening done. Tour scheduling in progress.",
+      "actionNeeded": "Awaiting Julian's reply. No action needed unless no response by Monday.",
+      "active": true
+    },
+    {
+      "id": "prsp-10",
+      "name": "Thomas Thuillier",
+      "source": "Craigslist",
+      "status": "ACTIVE - RESPONDED",
+      "date": "04/05/2026",
+      "profile": "Age 55, Senior Scientist at Lawrence Berkeley Lab (staff), French. Seeking 1-year lease (wife joins Aug 2027).",
+      "matchAssessment": "EXCELLENT - LBL staff scientist = top-tier income stability. Quiet, respectful, mature. 1-year lease aligns. Single occupant.",
+      "lastMessage": "Replied 04/06 12:36 AM via Yahoo to CL relay. Confirmed availability, sent house details, offered tour.",
+      "conversationStage": "Initial exchange complete. Awaiting Thomas's response to schedule tour.",
+      "actionNeeded": "Awaiting his reply. No action needed.",
+      "active": true
+    },
+    {
+      "id": "prsp-11",
+      "name": "Jan Schütte-Engel",
+      "source": "Craigslist",
+      "status": "ACTIVE - RESPONDED",
+      "date": "04/05/2026",
+      "profile": "Postdoc at UC Berkeley. Wants unfurnished room with hardwood floor.",
+      "matchAssessment": "STRONG - UC Berkeley postdoc = stable funding 2-5 years. Specific questions show genuine interest. Downstairs hardwood room is a match.",
+      "lastMessage": "Replied 04/06 8:07 AM via Yahoo to CL relay. Confirmed availability, answered flooring question, offered virtual tour.",
+      "conversationStage": "Initial exchange complete. Awaiting Jan's response to schedule tour.",
+      "actionNeeded": "Awaiting his reply. No action needed.",
       "active": true
     },
     {
       "id": "prsp-2",
-      "name": "Thomas Thuillier",
-      "source": "Craigslist",
-      "status": "NEW \u26a1",
-      "date": "04/05/2026",
-      "notes": "Senior scientist at Lawrence Berkeley Lab (staff scientist). French, age 55. Seeking shared house for 1 year while living alone (wife joins August 2027). Quiet and respectful. Wants to schedule a visit. Phone: 510-365-5300. EXCELLENT fit \u2014 stable LBL income, quiet, professional.",
-      "actionNeeded": "Reply with screening confirmation and tour scheduling. Thomas is an excellent prospect \u2014 LBL staff scientist = very stable income, quiet/respectful, seeking 1-year lease. Suggest Friday evening tour if Mike is back in Berkeley.",
-      "active": true
+      "name": "Patricia",
+      "source": "Facebook Marketplace",
+      "status": "ARCHIVED",
+      "date": "03/29/2026",
+      "notes": "STALE - no reply for 7 days. Archived 04/03.",
+      "active": false
     },
     {
       "id": "prsp-3",
-      "name": "Jan Sch\u00fctte-Engel",
-      "source": "Craigslist",
-      "status": "NEW \u26a1",
-      "date": "04/05/2026",
-      "notes": "Postdoc at UC Berkeley. Interested in room, asks about flooring (carpet vs hardwood). Wants to schedule a tour. Phone: 217-904-8944. Strong fit \u2014 Berkeley postdoc, stable funding.",
-      "actionNeeded": "Reply confirming availability, answer flooring question (which room has carpet vs hardwood), and offer tour time. Jan is a strong prospect \u2014 Berkeley postdoc = 2-5 year funded position.",
-      "active": true
+      "name": "Wenfamus Maximus",
+      "source": "Facebook Marketplace",
+      "status": "ARCHIVED",
+      "date": "03/29/2026",
+      "notes": "STALE - no reply for 4 days. Archived 04/05.",
+      "active": false
+    },
+    {
+      "id": "prsp-4",
+      "name": "Nick",
+      "source": "Facebook Marketplace",
+      "status": "ARCHIVED",
+      "date": "03/18/2026",
+      "notes": "STALE - no follow-up for 18 days. Archived 04/05.",
+      "active": false
+    },
+    {
+      "id": "prsp-5",
+      "name": "Yesenia Barron",
+      "source": "Zillow",
+      "status": "ARCHIVED",
+      "date": "01/21/2026",
+      "notes": "DECLINED - income below threshold.",
+      "active": false
+    },
+    {
+      "id": "prsp-6",
+      "name": "Devanshi Thakker",
+      "source": "Zillow",
+      "status": "ARCHIVED",
+      "date": "01/08/2026",
+      "notes": "STALE.",
+      "active": false
+    },
+    {
+      "id": "prsp-7",
+      "name": "Edx Wang",
+      "source": "Zillow",
+      "status": "ARCHIVED",
+      "date": "01/05/2026",
+      "notes": "STALE.",
+      "active": false
+    },
+    {
+      "id": "prsp-8",
+      "name": "Terrail",
+      "source": "Facebook Marketplace",
+      "status": "ARCHIVED",
+      "date": "03/27/2026",
+      "notes": "STALE.",
+      "active": false
+    },
+    {
+      "id": "prsp-9",
+      "name": "Reggie",
+      "source": "Facebook Marketplace",
+      "status": "ARCHIVED",
+      "date": "03/26/2026",
+      "notes": "STALE.",
+      "active": false
     }
   ],
   "tours": {
@@ -257,46 +289,60 @@
   },
   "system": [
     {
-      "name": "Daily Check Task",
-      "detail": "Runs 9 AM daily",
+      "name": "Morning Sweep",
+      "detail": "Runs 8 AM daily",
+      "status": "live"
+    },
+    {
+      "name": "Evening Sweep",
+      "detail": "Runs 6 PM daily",
+      "status": "live"
+    },
+    {
+      "name": "Weekly Deep Audit",
+      "detail": "Runs Sundays",
       "status": "live"
     },
     {
       "name": "Email Monitoring",
-      "detail": "berkeleystuarthouse@gmail.com",
+      "detail": "Yahoo (CL relay) + berkeleystuarthouse@gmail.com",
       "status": "live"
     },
     {
-      "name": "iMessage Monitoring",
-      "detail": "(714) 612-0723 \u00b7 needs Claude app restart",
-      "status": "error"
+      "name": "iMessage Notifications",
+      "detail": "(714) 612-0723",
+      "status": "live"
     },
     {
       "name": "Facebook Messenger",
-      "detail": "Manual check via Chrome MCP",
+      "detail": "Manual check via Chrome",
       "status": "pending"
     }
   ],
   "log": {
-    "date": "04/05/2026",
-    "title": "EVENING SWEEP (6:00 PM, Scheduled Task)",
+    "date": "04/06/2026",
+    "title": "WEEKLY DEEP AUDIT",
     "worked": [
-      "All three inboxes checked successfully: SpareRoom (no new messages since morning), Facebook Marketplace (no new messages), Gmail berkeleystuarthouse@ (no new prospect inquiries).",
-      "SpareRoom listing confirmed live, upgrade active through 04/09 3:11 PM EDT. Julian last active 2 hours ago \u2014 still engaged.",
-      "FB Marketplace listing confirmed live at 196 clicks (+7 from morning's 189 \u2014 solid daily engagement).",
-      "FB group comments checked: UC Berkeley Housing (0 comments), Bay Area Housing (2 old comments from 29 weeks ago \u2014 Cirtru spam + Mike's reply). No new prospect engagement.",
-      "All tracker files updated (prospects.md, listing_copy.md).",
-      "Prospect pipeline audit complete: Julian Flanagan remains only active prospect. All others correctly archived."
+      "All 6 platforms audited — all confirmed LIVE",
+      "Zillow bot detection RESOLVED — logged in and checked, no new leads",
+      "7 FB groups reposted (~525K combined member reach)",
+      "3 active prospects: Julian (SpareRoom, TOUR SCHEDULING), Thomas (CL, LBL scientist), Jan (CL, UC Berkeley postdoc)",
+      "Pipeline grew 200% (1 → 3 active prospects) — best pipeline quality since launch",
+      "Competitor analysis complete: $1,650 pricing justified, no changes needed",
+      "All tracker files updated (prospects.md, listing_copy.md, system_log.md)"
     ],
     "failed": [
-      "**\ud83d\udea8 CRITICAL: Julian Flanagan has been waiting 8+ hours for a reply to confirm tour time.** He replied at 10:47 AM EDT saying he's available any evening except Thursday. The morning sweep flagged this and sent Mike an iMessage, but no reply has been sent on SpareRoom. This is the #1 risk to our only active prospect. Mike MUST reply tonight.",
-      "SpareRoom thread view still renders blank white page (persistent bug since 04/03). Workaround: read_page accessibility tree works to extract content.",
-      "FB Marketplace renewal still not done (97 days old, 196 clicks). This is an ongoing manual action item.",
-      "Zillow inbox still unchecked (bot detection, 10+ days since last check). Mike must check manually.",
-      "3 FB group reposts still pending (Bay Area/SF Housing, Oakland Housing, SF Bay Area Housing).",
-      "Apartments.com retry still unresolved (9 days)."
+      "FB Marketplace renewal still broken (98 days, ~200 clicks, 0 quality conversions)",
+      "Gmail berkeleystuarthouse@ not logged in on this browser — could not check",
+      "Apartments.com site error unresolved (9 days)"
     ],
-    "improvement": "- If Julian's tour is confirmed tonight, prepare a \"virtual tour prep\" checklist for Mike: clean both rooms, check lighting in each room, test video call setup (FaceTime/Zoom), have a walkthrough script (start with exterior \u2192 kitchen \u2192 living room \u2192 each bedroom \u2192 bathrooms \u2192 mention BART proximity, street parking, neighborhood). This prep makes the difference between a lukewarm and a locked-in prospect.\n- Consider setting up a draft reply template in SpareRoom so the automated sweep can propose replies faster \u2014 reduce the gap between prospect message and our response.",
-    "metrics": {}
+    "improvement": "SpareRoom upgrade expires 04/09 — decide by 04/07. If Julian confirms tour, prepare virtual tour checklist. Consider FB Marketplace delete + relist to fix renewal bug.",
+    "metrics": {
+      "live": 13,
+      "pending": 1,
+      "prospects_active": 3,
+      "prospects_archived": 8,
+      "actions_urgent": 0
+    }
   }
 }
