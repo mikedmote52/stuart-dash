@@ -51,9 +51,12 @@
       width: 100%;
     }
 
-    /* Header */
+    /* Header & Update Status */
     .header {
-      margin-bottom: 24px;
+      margin-bottom: 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
     }
 
     .header-title {
@@ -65,12 +68,46 @@
     .header-subtitle {
       font-size: 13px;
       color: #888;
-      margin-bottom: 8px;
+      margin-bottom: 4px;
     }
 
     .header-updated {
       font-size: 11px;
-      color: #555;
+      color: #666;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .header-updated.stale {
+      color: #f97316;
+    }
+
+    .header-updated.very-stale {
+      color: #ef4444;
+    }
+
+    .refresh-indicator {
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #22c55e;
+      animation: pulse 2s infinite;
+    }
+
+    .refresh-indicator.refreshing {
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 0.3; }
+      50% { opacity: 1; }
+    }
+
+    @keyframes spin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
     }
 
     /* Room Pills */
@@ -83,7 +120,7 @@
 
     .room-pill {
       flex: 1;
-      min-width: 160px;
+      min-width: 140px;
       padding: 12px;
       background: #141414;
       border: 1px solid #222;
@@ -102,1083 +139,959 @@
       margin-bottom: 4px;
     }
 
-    .room-pill-date {
+    .room-pill-meta {
       font-size: 11px;
       color: #888;
     }
 
-    .room-pill.available {
-      border-color: #22c55e;
-      background: rgba(34, 197, 94, 0.05);
-    }
-
-    .room-pill.available .room-pill-date {
-      color: #22c55e;
-    }
-
-    /* Stats Bar */
-    .stats {
+    /* Stats Grid */
+    .stats-grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 8px;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
       margin-bottom: 24px;
     }
 
-    .stat-item {
-      padding: 12px 8px;
+    .stat-card {
+      padding: 16px;
       background: #141414;
       border: 1px solid #222;
       border-radius: 8px;
       text-align: center;
-      cursor: pointer;
-      transition: all 0.2s ease;
     }
 
-    .stat-item:active {
-      transform: scale(0.95);
-    }
-
-    .stat-value {
-      font-size: 18px;
+    .stat-number {
+      font-size: 28px;
       font-weight: 600;
       margin-bottom: 4px;
     }
 
     .stat-label {
-      font-size: 10px;
+      font-size: 12px;
       color: #888;
       text-transform: uppercase;
       letter-spacing: 0.5px;
     }
 
-    .stat-item.live .stat-value { color: #22c55e; }
-    .stat-item.pending .stat-value { color: #eab308; }
-    .stat-item.prospects .stat-value { color: #3b82f6; }
-    .stat-item.actions .stat-value { color: #f97316; }
-
-    /* Sections */
-    .section {
-      margin-bottom: 24px;
+    .stat-card.live .stat-number {
+      color: #22c55e;
     }
 
-    .section-title {
-      font-size: 12px;
-      font-weight: 600;
-      text-transform: uppercase;
-      color: #888;
-      letter-spacing: 0.5px;
-      margin-bottom: 8px;
-      padding: 0 4px;
+    .stat-card.pending .stat-number {
+      color: #eab308;
     }
 
-    /* Cards and List Items */
-    .card, .list-item {
-      background: #141414;
-      border: 1px solid #222;
-      border-radius: 8px;
-      padding: 12px;
-      margin-bottom: 8px;
-      cursor: pointer;
-      transition: all 0.2s ease;
+    .stat-card.prospects .stat-number {
+      color: #3b82f6;
     }
 
-    .card:active, .list-item:active {
-      background: #1a1a1a;
-    }
-
-    /* Action Cards */
-    .action-card {
-      display: flex;
-      align-items: flex-start;
-      gap: 12px;
-    }
-
-    .action-icon {
-      font-size: 20px;
-      flex-shrink: 0;
-      margin-top: 2px;
-    }
-
-    .action-content {
-      flex: 1;
-    }
-
-    .action-title {
-      font-size: 13px;
-      font-weight: 600;
-      margin-bottom: 2px;
-    }
-
-    .action-text {
-      font-size: 12px;
-      color: #ccc;
-      line-height: 1.4;
-    }
-
-    .action-card.done .action-title,
-    .action-card.done .action-text {
-      color: #555;
-    }
-
-    /* List Item Format */
-    .item-header {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      justify-content: space-between;
-    }
-
-    .item-left {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .item-name {
-      font-size: 13px;
-      font-weight: 600;
-      margin-bottom: 2px;
-    }
-
-    .item-detail {
-      font-size: 11px;
-      color: #888;
-    }
-
-    .item-right {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .status-dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      flex-shrink: 0;
-    }
-
-    .status-dot.live { background: #22c55e; }
-    .status-dot.pending { background: #eab308; }
-    .status-dot.warn { background: #f97316; }
-    .status-dot.error { background: #ef4444; }
-
-    .status-dot.warn {
-      animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-    }
-
-    @keyframes pulse {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.5; }
-    }
-
-    /* Expanded Views */
-    .expanded-content {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.3s ease;
-    }
-
-    .expanded-content.active {
-      max-height: 1000px;
-    }
-
-    .expanded-body {
-      padding-top: 12px;
-      border-top: 1px solid #222;
-      margin-top: 12px;
-    }
-
-    .notes-section {
-      margin-bottom: 12px;
-    }
-
-    .notes-label {
-      font-size: 11px;
-      font-weight: 600;
-      text-transform: uppercase;
-      color: #888;
-      letter-spacing: 0.5px;
-      margin-bottom: 6px;
-    }
-
-    .notes-text {
-      font-size: 12px;
-      color: #aaa;
-      line-height: 1.5;
-      background: rgba(255, 255, 255, 0.02);
-      padding: 8px;
-      border-radius: 4px;
-      margin-bottom: 8px;
-    }
-
-    .notes-textarea {
-      width: 100%;
-      padding: 8px;
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid #222;
-      border-radius: 4px;
-      color: #e5e5e5;
-      font-family: inherit;
-      font-size: 12px;
-      resize: vertical;
-      min-height: 60px;
-      margin-bottom: 8px;
-    }
-
-    .notes-textarea::placeholder {
-      color: #555;
-    }
-
-    /* Buttons */
-    .button-group {
-      display: flex;
-      gap: 8px;
-      margin-top: 8px;
-    }
-
-    .btn {
-      flex: 1;
-      padding: 8px 12px;
-      border: 1px solid #222;
-      background: rgba(255, 255, 255, 0.05);
-      color: #e5e5e5;
-      border-radius: 4px;
-      font-size: 12px;
-      font-weight: 500;
-      cursor: pointer;
-      transition: all 0.2s ease;
-    }
-
-    .btn:active {
-      background: rgba(255, 255, 255, 0.1);
-    }
-
-    .btn-primary {
-      background: #3b82f6;
-      border-color: #3b82f6;
-      color: #fff;
-    }
-
-    .btn-primary:active {
-      background: #2563eb;
-    }
-
-    .btn-danger {
-      background: #ef4444;
-      border-color: #ef4444;
-      color: #fff;
-    }
-
-    .btn-danger:active {
-      background: #dc2626;
-    }
-
-    .btn-small {
-      flex: 0 1 auto;
-      padding: 6px 8px;
-      font-size: 11px;
-    }
-
-    .checkbox-btn {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      padding: 6px 8px;
-    }
-
-    .checkbox {
-      width: 16px;
-      height: 16px;
-      border: 1px solid #222;
-      border-radius: 3px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 11px;
-      cursor: pointer;
-    }
-
-    .checkbox.checked {
-      background: #22c55e;
-      border-color: #22c55e;
-    }
-
-    .flag-btn {
-      width: 28px;
-      height: 28px;
-      padding: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 14px;
-      border: 1px solid transparent;
-      background: transparent;
-      cursor: pointer;
-      flex-shrink: 0;
-    }
-
-    .flag-btn.flagged {
+    .stat-card.actions .stat-number {
       color: #f97316;
     }
 
-    /* Prospect Status Badge */
-    .prospect-badge {
+    /* Prospect Spotlight */
+    .section-title {
+      font-size: 14px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: #888;
+      margin: 24px 0 12px 0;
+      padding-top: 12px;
+      border-top: 1px solid #1a1a1a;
+    }
+
+    .prospects-container {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+
+    .prospect-card {
+      background: #141414;
+      border: 1px solid #222;
+      border-radius: 8px;
+      padding: 16px;
+      transition: all 0.2s ease;
+    }
+
+    .prospect-card:active {
+      transform: scale(0.98);
+    }
+
+    .prospect-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 12px;
+    }
+
+    .prospect-name {
+      font-size: 16px;
+      font-weight: 600;
+      flex: 1;
+    }
+
+    .prospect-status-badge {
       display: inline-block;
-      padding: 2px 6px;
-      background: rgba(255, 255, 255, 0.1);
-      border-radius: 3px;
+      padding: 4px 8px;
+      border-radius: 4px;
       font-size: 10px;
       font-weight: 600;
       text-transform: uppercase;
       letter-spacing: 0.3px;
-      margin-right: 6px;
     }
 
-    .prospect-badge.responded { background: rgba(34, 197, 94, 0.2); color: #22c55e; }
-    .prospect-badge.screening { background: rgba(59, 130, 246, 0.2); color: #3b82f6; }
-    .prospect-badge.stale { background: rgba(239, 68, 68, 0.2); color: #ef4444; }
-
-    .prospect-source {
-      font-size: 11px;
-      color: #888;
+    .prospect-status-badge.screening {
+      background: #3b82f6;
+      color: #fff;
     }
 
-    .prospect-archived {
-      opacity: 0.5;
+    .prospect-status-badge.responded {
+      background: #eab308;
+      color: #000;
     }
 
-    /* Log Summary */
-    .log-summary {
+    .prospect-status-badge.qualified {
+      background: #22c55e;
+      color: #000;
+    }
+
+    .prospect-profile {
       font-size: 12px;
-      line-height: 1.6;
       color: #aaa;
+      margin-bottom: 12px;
+      line-height: 1.4;
     }
 
-    .log-section {
+    .prospect-match {
       margin-bottom: 12px;
     }
 
-    .log-label {
-      font-weight: 600;
+    .prospect-match-label {
+      font-size: 11px;
       color: #888;
       margin-bottom: 4px;
-      font-size: 11px;
-      text-transform: uppercase;
+      display: flex;
+      justify-content: space-between;
     }
 
-    .log-item {
+    .match-bar {
+      width: 100%;
+      height: 6px;
+      background: #1a1a1a;
+      border-radius: 3px;
+      overflow: hidden;
+    }
+
+    .match-bar-fill {
+      height: 100%;
+      background: #22c55e;
+      border-radius: 3px;
+      transition: width 0.3s ease;
+    }
+
+    .match-bar-fill.ok {
+      background: #eab308;
+    }
+
+    .match-bar-fill.poor {
+      background: #ef4444;
+    }
+
+    .prospect-message {
+      background: #0a0a0a;
+      border-left: 3px solid #3b82f6;
+      padding: 12px;
+      border-radius: 4px;
+      margin-bottom: 12px;
       font-size: 12px;
-      margin-bottom: 4px;
-      padding-left: 12px;
+      font-style: italic;
+      color: #bbb;
+      line-height: 1.4;
     }
 
-    .log-item:before {
-      content: "→";
-      margin-right: 6px;
-      color: #555;
+    .prospect-conversation {
+      font-size: 11px;
+      color: #888;
+      margin-bottom: 12px;
+      padding: 8px;
+      background: #0a0a0a;
+      border-radius: 4px;
+    }
+
+    .prospect-action {
+      font-size: 12px;
+      color: #f97316;
+      font-weight: 500;
+      padding: 8px;
+      background: rgba(249, 115, 22, 0.1);
+      border-radius: 4px;
+      border-left: 2px solid #f97316;
+    }
+
+    /* What's New Section */
+    .whats-new {
+      background: #141414;
+      border: 1px solid #222;
+      border-radius: 8px;
+      padding: 16px;
+      margin-bottom: 24px;
+    }
+
+    .whats-new-title {
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 12px;
+      color: #22c55e;
+    }
+
+    .whats-new-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .whats-new-item {
+      font-size: 12px;
+      display: flex;
+      gap: 8px;
+      padding: 8px 0;
+      line-height: 1.4;
+    }
+
+    .whats-new-item-icon {
+      display: flex;
+      align-items: flex-start;
+      margin-top: 2px;
+      flex-shrink: 0;
+    }
+
+    .whats-new-item.success .whats-new-item-icon {
+      color: #22c55e;
+    }
+
+    .whats-new-item.failure .whats-new-item-icon {
+      color: #ef4444;
+    }
+
+    .whats-new-item-text {
+      flex: 1;
+      color: #aaa;
+    }
+
+    /* Actions Section */
+    .actions-container {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-bottom: 24px;
+    }
+
+    .action-item {
+      background: #141414;
+      border-left: 3px solid #f97316;
+      padding: 12px;
+      border-radius: 4px;
+      font-size: 12px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .action-item:active {
+      transform: translateX(2px);
+    }
+
+    .action-priority {
+      font-weight: 600;
+      margin-bottom: 4px;
+      color: #f97316;
+    }
+
+    .action-text {
+      color: #aaa;
+      line-height: 1.4;
+    }
+
+    /* Listings Accordion */
+    .listings-section {
+      margin-bottom: 24px;
+    }
+
+    .accordion-group {
+      background: #141414;
+      border: 1px solid #222;
+      border-radius: 8px;
+      overflow: hidden;
+      margin-bottom: 8px;
+    }
+
+    .accordion-header {
+      padding: 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      user-select: none;
+      background: #141414;
+      border: none;
+      width: 100%;
+      font-size: 13px;
+      font-weight: 500;
+      color: #e5e5e5;
+      transition: all 0.2s ease;
+    }
+
+    .accordion-header:active {
+      background: #1a1a1a;
+    }
+
+    .accordion-header .status-dot {
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      margin-right: 8px;
+    }
+
+    .accordion-header .status-dot.live {
+      background: #22c55e;
+    }
+
+    .accordion-header .status-dot.pending {
+      background: #eab308;
+    }
+
+    .accordion-header .status-dot.warn {
+      background: #f97316;
+    }
+
+    .accordion-header .status-dot.error {
+      background: #ef4444;
+    }
+
+    .accordion-header .status-dot.inactive {
+      background: #666;
+    }
+
+    .accordion-toggle {
+      font-size: 10px;
+      color: #666;
+      transition: transform 0.2s ease;
+    }
+
+    .accordion-toggle.open {
+      transform: rotate(90deg);
+    }
+
+    .accordion-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+      background: #0a0a0a;
+    }
+
+    .accordion-content.open {
+      max-height: 500px;
+    }
+
+    .accordion-detail {
+      padding: 12px;
+      font-size: 11px;
+      color: #888;
+      line-height: 1.5;
+      border-top: 1px solid #1a1a1a;
+    }
+
+    .facebook-groups-summary {
+      font-size: 12px;
+      color: #aaa;
+      padding: 8px 0;
+    }
+
+    /* System Status */
+    .system-status {
+      margin-bottom: 24px;
+    }
+
+    .system-item {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px;
+      background: #141414;
+      border: 1px solid #222;
+      border-radius: 4px;
+      font-size: 11px;
+      margin-bottom: 6px;
+    }
+
+    .system-item-name {
+      font-weight: 500;
+    }
+
+    .system-item-status {
+      padding: 2px 6px;
+      border-radius: 3px;
+      font-size: 10px;
+      font-weight: 600;
+    }
+
+    .system-item-status.live {
+      background: rgba(34, 197, 94, 0.2);
+      color: #22c55e;
+    }
+
+    .system-item-status.error {
+      background: rgba(239, 68, 68, 0.2);
+      color: #ef4444;
+    }
+
+    .system-item-status.pending {
+      background: rgba(235, 179, 8, 0.2);
+      color: #eab308;
+    }
+
+    /* Bottom Navigation */
+    nav {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 50px;
+      padding-bottom: env(safe-area-inset-bottom);
+      background: #0a0a0a;
+      border-top: 1px solid #1a1a1a;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      max-width: 480px;
+      margin: 0 auto;
+    }
+
+    nav a {
+      flex: 1;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      color: #666;
+      font-size: 11px;
+      text-align: center;
+      transition: color 0.2s ease;
+    }
+
+    nav a:active {
+      color: #22c55e;
+    }
+
+    /* Pull to Refresh */
+    .pull-to-refresh {
+      position: relative;
+      top: 0;
+      left: 0;
+      right: 0;
+      text-align: center;
+      padding: 20px 16px;
+      color: #666;
+      font-size: 12px;
+      transition: all 0.2s ease;
+    }
+
+    .pull-to-refresh.pulling {
+      color: #22c55e;
     }
 
     /* Empty State */
     .empty-state {
       padding: 24px 16px;
       text-align: center;
-      color: #888;
-      font-size: 13px;
+      color: #666;
+      font-size: 12px;
     }
 
-    /* Pull to Refresh Hint */
-    .pull-hint {
-      text-align: center;
-      padding: 16px;
-      font-size: 11px;
-      color: #555;
-    }
-
-    /* Bottom Navigation */
-    .bottom-nav {
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      height: 56px;
-      background: #141414;
-      border-top: 1px solid #222;
-      display: flex;
-      justify-content: space-around;
-      padding-bottom: env(safe-area-inset-bottom);
-      max-width: 480px;
-      margin: 0 auto;
-      width: 100%;
-    }
-
-    .nav-item {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 4px;
-      cursor: pointer;
-      text-decoration: none;
-      color: #888;
-      font-size: 10px;
-      transition: all 0.2s ease;
-      -webkit-user-select: none;
-      user-select: none;
-    }
-
-    .nav-item.active {
-      color: #3b82f6;
-    }
-
-    .nav-icon {
-      font-size: 18px;
-    }
-
-    /* Responsive adjustments */
-    @media (max-width: 480px) {
-      body {
-        width: 100vw;
-        padding-left: 0;
-        padding-right: 0;
-      }
-
-      main {
-        width: 100vw;
-      }
-
-      .bottom-nav {
-        width: 100vw;
-        left: env(safe-area-inset-left);
-      }
-    }
-
-    /* Loading and Error States */
-    .loading {
-      text-align: center;
-      padding: 40px 16px;
-      color: #888;
-    }
-
-    .spinner {
-      display: inline-block;
-      width: 20px;
-      height: 20px;
-      border: 2px solid #222;
-      border-top-color: #3b82f6;
-      border-radius: 50%;
-      animation: spin 0.8s linear infinite;
+    /* Loading/Error States */
+    .error-message {
+      padding: 12px;
+      background: rgba(239, 68, 68, 0.1);
+      border: 1px solid #ef4444;
+      border-radius: 4px;
+      color: #ef4444;
+      font-size: 12px;
       margin-bottom: 12px;
-    }
-
-    @keyframes spin {
-      to { transform: rotate(360deg); }
-    }
-
-    /* Utility */
-    .hidden {
-      display: none !important;
-    }
-
-    .opacity-50 {
-      opacity: 0.5;
     }
   </style>
 </head>
+
 <body>
-  <main id="main">
-    <div class="pull-hint">↓ Pull to refresh</div>
+  <main>
     <div class="container">
-      <!-- Header -->
+      <!-- Header with Update Status -->
       <div class="header">
-        <div class="header-title" id="headerTitle">2322 Stuart St</div>
-        <div class="header-subtitle" id="headerSubtitle">Berkeley Rental Manager</div>
-        <div class="header-updated" id="headerUpdated">Loading...</div>
+        <div>
+          <h1 class="header-title">Stuart Dash</h1>
+          <p class="header-subtitle" id="property-subtitle">Loading...</p>
+          <div class="header-updated">
+            <span class="refresh-indicator" id="refresh-dot"></span>
+            <span id="updated-text">Loading...</span>
+          </div>
+        </div>
       </div>
 
       <!-- Room Pills -->
-      <div class="rooms" id="roomsContainer"></div>
+      <div class="rooms" id="rooms-container"></div>
 
-      <!-- Stats -->
-      <div class="stats" id="statsContainer"></div>
-
-      <!-- Action Required -->
-      <div class="section">
-        <div class="section-title">Action Required</div>
-        <div id="actionsContainer"></div>
-      </div>
-
-      <!-- Listing Platforms -->
-      <div class="section">
-        <div class="section-title">Listing Platforms</div>
-        <div id="listingsContainer"></div>
-      </div>
-
-      <!-- Facebook Groups -->
-      <div class="section">
-        <div class="section-title">Facebook Groups</div>
-        <div id="facebookGroupsContainer"></div>
-      </div>
-
-      <!-- Prospect Pipeline -->
-      <div class="section">
-        <div class="section-title">Prospect Pipeline</div>
-        <div id="prospectsContainer"></div>
-      </div>
-
-      <!-- Tours -->
-      <div class="section">
-        <div class="section-title">Tours</div>
-        <div id="toursContainer"></div>
-      </div>
-
-      <!-- System Status -->
-      <div class="section">
-        <div class="section-title">System Status</div>
-        <div id="systemContainer"></div>
-      </div>
-
-      <!-- Log Summary -->
-      <div class="section">
-        <div class="section-title">Activity Log</div>
-        <div id="logContainer" class="card" style="cursor: pointer;">
-          <div style="font-weight: 600; margin-bottom: 8px;">Tap to view log →</div>
-          <div class="expanded-content" id="logContent">
-            <div class="expanded-body">
-              <div class="log-summary" id="logSummaryContent"></div>
-            </div>
-          </div>
+      <!-- Stats Grid -->
+      <div class="stats-grid">
+        <div class="stat-card live">
+          <div class="stat-number" id="stat-live">0</div>
+          <div class="stat-label">Live</div>
+        </div>
+        <div class="stat-card pending">
+          <div class="stat-number" id="stat-pending">0</div>
+          <div class="stat-label">Pending</div>
+        </div>
+        <div class="stat-card prospects">
+          <div class="stat-number" id="stat-prospects">0</div>
+          <div class="stat-label">Prospects</div>
+        </div>
+        <div class="stat-card actions">
+          <div class="stat-number" id="stat-actions">0</div>
+          <div class="stat-label">Actions</div>
         </div>
       </div>
+
+      <!-- Prospect Spotlight -->
+      <div id="prospect-section"></div>
+
+      <!-- What's New -->
+      <div id="whats-new-section"></div>
+
+      <!-- Actions -->
+      <div id="actions-section"></div>
+
+      <!-- Listings -->
+      <div id="listings-section"></div>
+
+      <!-- Facebook Groups Summary -->
+      <div id="facebook-groups-section"></div>
+
+      <!-- System Status -->
+      <div id="system-section"></div>
     </div>
   </main>
 
-  <!-- Bottom Navigation -->
-  <nav class="bottom-nav">
-    <div class="nav-item active" id="navDash">
-      <div class="nav-icon">📊</div>
-      <div>Dashboard</div>
-    </div>
-    <a href="tel:7146120723" class="nav-item">
-      <div class="nav-icon">☎️</div>
-      <div>Call Line</div>
-    </a>
-    <a href="https://sfbay.craigslist.org/eby/roo/d/berkeley-huge-400sqft-furnished-room/7921147509.html" target="_blank" class="nav-item">
-      <div class="nav-icon">📍</div>
-      <div>CL Listing</div>
-    </a>
-    <a href="mailto:berkeleystuarthouse@gmail.com" class="nav-item">
-      <div class="nav-icon">✉️</div>
-      <div>Email</div>
-    </a>
+  <nav>
+    <a href="#dashboard">Dashboard</a>
+    <a href="https://docs.google.com/document/d/1pPjH2pPQw3hT8F4fYz0eN9m6K7x4lL3v0aB3cD5eF6g/edit" target="_blank">Call Line</a>
+    <a href="https://docs.google.com/document/d/1qQ0iI5sT9u7vW2xY3zZ4aA5bB6cC7dD8eE9fF0gG1h/edit" target="_blank">CL Listing</a>
+    <a href="https://mail.google.com/mail/u/0/" target="_blank">Email</a>
+    <a href="https://www.spareroom.com.au/" target="_blank">SpareRoom</a>
   </nav>
 
   <script>
-    // ============================================================================
-    // DATA & CONSTANTS
-    // ============================================================================
+    // State management
+    let appState = {
+      data: null,
+      lastFetchTime: null,
+      lastLogDate: null,
+      expandedSections: {}
+    };
 
-    const SAMPLE_DATA = {
-      lastUpdated: "2026-04-03T18:12:00Z",
-      property: {
-        address: "2322 Stuart St",
-        subtitle: "Berkeley Rental Manager",
-        rooms: [
-          { name: "Room A (King)", price: 1650, status: "available", availableDate: "2026-08-01" },
-          { name: "Room B (Queen)", price: 1650, status: "available", availableDate: "2026-08-01" }
-        ]
-      },
-      stats: { live: 6, pending: 4, prospects: 2, actions: 3 },
-      actions: [
-        { id: "act-1", icon: "💬", priority: "Patricia", text: "wants a video tour — reply pending your approval" },
-        { id: "act-2", icon: "💬", priority: "Wenfamus Maximus", text: "messaged on FB Marketplace (Mar 29 11:38 AM) — needs response" },
-        { id: "act-3", icon: "⚠️", priority: "SpareRoom", text: "listing not live — confirm registration email and post listing manually" }
-      ],
-      listings: [
-        { id: "lst-cl", name: "Craigslist", detail: "Posted 03/14 · 15 days old · renew ~04/27", status: "live", category: "platform", notes: "Posting from 03/14, 15 days old. Renewal recommended by 04/27." },
-        { id: "lst-zil", name: "Zillow → Trulia + HotPads", detail: "Live 1 day · 1 new lead (bot-blocked, check manually)", status: "warn", category: "platform", notes: "New lead arrived but blocked by bot verification. Needs manual review." },
-        { id: "lst-fbm", name: "Facebook Marketplace", detail: "Active · 2 conversations (Patricia + Wenfamus)", status: "live", category: "platform", notes: "Two active conversations ongoing. Monitor for new inquiries." },
-        { id: "lst-sr", name: "SpareRoom", detail: "Registration email not confirmed — not live", status: "error", category: "platform", notes: "Account created but registration email not confirmed. Listing is not visible to prospects." },
-        { id: "lst-cal", name: "CalRentals (UC Berkeley)", detail: "$30/mo paid · pending UC review · expect ~03/30", status: "pending", category: "platform", notes: "Submitted for UC review. Expects approval around 03/30. Payment confirmed." },
-        { id: "lst-apt", name: "Apartments.com", detail: "Site error on add property · needs support call", status: "error", category: "platform", notes: "Technical error encountered during property listing. Support call needed." },
-        { id: "fbg-1", name: "UC Berkeley Off-Campus Housing", detail: "89.7K · posted 03/28", status: "live", category: "facebook_group", notes: "Posted to 89,700 member group. Strong reach for Berkeley students." },
-        { id: "fbg-2", name: "UC Berkeley Housing, Rooms, Apts", detail: "47.6K · posted 03/28", status: "live", category: "facebook_group", notes: "Posted to 47,600 member housing group. Good engagement expected." },
-        { id: "fbg-3", name: "Berkeley & Bay Area Off-Campus", detail: "16.4K · posted 03/28", status: "live", category: "facebook_group", notes: "Posted to 16,400 member regional housing group." },
-        { id: "fbg-4", name: "Berkeley CA Rentals", detail: "6.5K · posted 03/28", status: "live", category: "facebook_group", notes: "Posted to 6,500 member local rentals group." }
-      ],
-      prospects: [
-        { id: "prsp-1", name: "Wenfamus Maximus", source: "FB Marketplace", status: "RESPONDED", date: "03/29/2026", notes: "Screening Qs sent 04/01 · awaiting reply", actionNeeded: "Follow up if no reply by 04/05", active: true },
-        { id: "prsp-2", name: "Julian Flanagan", source: "SpareRoom", status: "SCREENING", date: "04/02/2026", notes: "Incoming Berkeley grad student. Screening questions sent 04/03.", actionNeeded: "Awaiting Julian's screening responses", active: true },
-        { id: "prsp-3", name: "Patricia", source: "FB Marketplace", status: "STALE", date: "03/29/2026", notes: "No reply to tour offer in 5 days · archived", actionNeeded: null, active: false }
-      ],
-      tours: { scheduled: [], completed: [] },
-      system: [
-        { name: "Daily Check Task", detail: "Runs 9 AM daily", status: "live" },
-        { name: "Email Monitoring", detail: "berkeleystuarthouse@gmail.com", status: "live" },
-        { name: "iMessage Monitoring", detail: "(714) 612-0723 · needs Claude app restart", status: "error" },
-        { name: "Facebook Messenger", detail: "Manual check via Chrome MCP", status: "pending" }
-      ],
-      log: {
-        date: "04/03/2026",
-        worked: ["SpareRoom screening response sent to Julian Flanagan", "Confirmed SpareRoom listing LIVE", "Confirmed Craigslist listing LIVE", "FB Marketplace inbox checked"],
-        failed: ["SpareRoom inbox navigation issue", "CalRentals inbox not directly checked", "FB Bay Area/SF Housing still PENDING"],
-        improvement: "Check if there's a way to feature or bump the SpareRoom listing",
-        metrics: { SpareRoom: "1 inquiry (Julian)", Craigslist: "still live", "FB Marketplace": "Wenfamus pending, Patricia archived", "Active Prospects": "2" }
+    // Initialize
+    document.addEventListener('DOMContentLoaded', () => {
+      init();
+      setInterval(() => refreshData(), 2 * 60 * 1000); // Auto-refresh every 2 minutes
+    });
+
+    async function init() {
+      await fetchData();
+      render();
+    }
+
+    async function fetchData() {
+      try {
+        const dot = document.getElementById('refresh-dot');
+        dot.classList.add('refreshing');
+
+        const response = await fetch('data.json');
+        if (!response.ok) throw new Error('Network response was not ok');
+        appState.data = await response.json();
+        appState.lastFetchTime = new Date();
+
+        dot.classList.remove('refreshing');
+        updateLastUpdatedTime();
+      } catch (error) {
+        console.error('Error fetching data:', error);
+        document.querySelector('.error-message')?.remove();
+        const errorEl = document.createElement('div');
+        errorEl.className = 'error-message';
+        errorEl.textContent = 'Failed to load data. Check your connection.';
+        document.querySelector('.container').prepend(errorEl);
       }
-    };
+    }
 
-    const STORAGE_KEYS = {
-      notes: "stuart_dash_notes",
-      flags: "stuart_dash_flags",
-      done: "stuart_dash_done"
-    };
+    function refreshData() {
+      fetchData();
+      render();
+    }
 
-    let appData = { ...SAMPLE_DATA };
+    function updateLastUpdatedTime() {
+      if (!appState.lastFetchTime) return;
 
-    // ============================================================================
-    // STORAGE UTILITIES
-    // ============================================================================
-
-    const Storage = {
-      getNotes(itemId) {
-        const data = JSON.parse(localStorage.getItem(STORAGE_KEYS.notes) || "{}");
-        return data[itemId] || "";
-      },
-      setNotes(itemId, text) {
-        const data = JSON.parse(localStorage.getItem(STORAGE_KEYS.notes) || "{}");
-        data[itemId] = text;
-        localStorage.setItem(STORAGE_KEYS.notes, JSON.stringify(data));
-      },
-      isFlagged(itemId) {
-        const data = JSON.parse(localStorage.getItem(STORAGE_KEYS.flags) || "{}");
-        return !!data[itemId];
-      },
-      toggleFlag(itemId) {
-        const data = JSON.parse(localStorage.getItem(STORAGE_KEYS.flags) || "{}");
-        data[itemId] = !data[itemId];
-        localStorage.setItem(STORAGE_KEYS.flags, JSON.stringify(data));
-      },
-      isDone(itemId) {
-        const data = JSON.parse(localStorage.getItem(STORAGE_KEYS.done) || "{}");
-        return !!data[itemId];
-      },
-      toggleDone(itemId) {
-        const data = JSON.parse(localStorage.getItem(STORAGE_KEYS.done) || "{}");
-        data[itemId] = !data[itemId];
-        localStorage.setItem(STORAGE_KEYS.done, JSON.stringify(data));
-      }
-    };
-
-    // ============================================================================
-    // DOM UTILITIES
-    // ============================================================================
-
-    function formatDate(isoString) {
-      const date = new Date(isoString);
       const now = new Date();
-      const sameDay = date.toDateString() === now.toDateString();
+      const diff = Math.floor((now - appState.lastFetchTime) / 1000 / 60); // minutes
+      const text = document.getElementById('updated-text');
+      const dot = document.getElementById('refresh-dot');
 
-      if (sameDay) {
-        return date.toLocaleTimeString("en-US", { hour: "numeric", minute: "2-digit", meridiem: "short" });
-      }
-      return date.toLocaleDateString("en-US", { month: "short", day: "numeric", hour: "numeric", minute: "2-digit", meridiem: "short" });
-    }
-
-    function createStatusDot(status) {
-      const el = document.createElement("div");
-      el.className = `status-dot ${status}`;
-      return el;
-    }
-
-    function toggleExpanded(cardEl) {
-      const content = cardEl.querySelector(".expanded-content");
-      if (content) {
-        content.classList.toggle("active");
-      }
-    }
-
-    // ============================================================================
-    // RENDER FUNCTIONS
-    // ============================================================================
-
-    function renderHeader() {
-      const { property, lastUpdated } = appData;
-      document.getElementById("headerTitle").textContent = property.address;
-      document.getElementById("headerSubtitle").textContent = property.subtitle;
-      document.getElementById("headerUpdated").textContent = `Last updated: ${formatDate(lastUpdated)}`;
-    }
-
-    function renderRooms() {
-      const { rooms } = appData.property;
-      const container = document.getElementById("roomsContainer");
-      container.innerHTML = rooms.map(room => {
-        const availDate = new Date(room.availableDate);
-        const dateStr = availDate.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "2-digit" });
-        return `
-          <div class="room-pill ${room.status === 'available' ? 'available' : ''}">
-            <div class="room-pill-name">${room.name}</div>
-            <div class="room-pill-date">Available ${dateStr}</div>
-          </div>
-        `;
-      }).join("");
-    }
-
-    function renderStats() {
-      const { stats } = appData;
-      const statTypes = [
-        { key: "live", label: "Live", class: "live" },
-        { key: "pending", label: "Pending", class: "pending" },
-        { key: "prospects", label: "Prospects", class: "prospects" },
-        { key: "actions", label: "Actions", class: "actions" }
-      ];
-      const container = document.getElementById("statsContainer");
-      container.innerHTML = statTypes.map(stat => `
-        <div class="stat-item ${stat.class}">
-          <div class="stat-value">${stats[stat.key]}</div>
-          <div class="stat-label">${stat.label}</div>
-        </div>
-      `).join("");
-    }
-
-    function renderActions() {
-      const { actions } = appData;
-      const container = document.getElementById("actionsContainer");
-      container.innerHTML = actions.map(action => {
-        const isDone = Storage.isDone(action.id);
-        const isFlagged = Storage.isFlagged(action.id);
-        const userNotes = Storage.getNotes(action.id);
-        return `
-          <div class="card action-card ${isDone ? 'done' : ''}" data-id="${action.id}">
-            <div class="action-card" onclick="toggleExpanded(this.closest('.card'))">
-              <div class="action-icon">${action.icon}</div>
-              <div class="action-content">
-                <div class="action-title">${action.priority}</div>
-                <div class="action-text">${action.text}</div>
-              </div>
-              <button class="flag-btn ${isFlagged ? 'flagged' : ''}" onclick="event.stopPropagation(); toggleFlag('${action.id}')">🚩</button>
-            </div>
-            <div class="expanded-content ${this && this.classList && this.classList.contains('expanded') ? 'active' : ''}">
-              <div class="expanded-body">
-                <div class="button-group">
-                  <button class="btn checkbox-btn" onclick="toggleDone('${action.id}')">
-                    <div class="checkbox ${isDone ? 'checked' : ''}">✓</div>
-                    <span>Mark Done</span>
-                  </button>
-                </div>
-                <div class="notes-section">
-                  <div class="notes-label">Your Notes</div>
-                  <textarea class="notes-textarea" placeholder="Add your notes..." onchange="saveNotes('${action.id}', this.value)">${userNotes}</textarea>
-                </div>
-              </div>
-            </div>
-          </div>
-        `;
-      }).join("");
-
-      // Add click handlers for cards
-      container.querySelectorAll(".card").forEach(card => {
-        card.addEventListener("click", function(e) {
-          if (!e.target.closest(".flag-btn") && !e.target.closest(".checkbox-btn") && !e.target.closest("textarea")) {
-            toggleExpanded(this);
-          }
-        });
-      });
-    }
-
-    function renderListings() {
-      const platforms = appData.listings.filter(l => l.category === "platform");
-      const container = document.getElementById("listingsContainer");
-      container.innerHTML = platforms.map(item => {
-        const isFlagged = Storage.isFlagged(item.id);
-        const userNotes = Storage.getNotes(item.id);
-        return `
-          <div class="card list-item" data-id="${item.id}">
-            <div class="item-header" onclick="toggleExpanded(this.closest('.card'))">
-              <div class="item-left">
-                <div class="item-name">${item.name}</div>
-                <div class="item-detail">${item.detail}</div>
-              </div>
-              <div class="item-right">
-                ${createStatusDot(item.status).outerHTML}
-                <button class="flag-btn ${isFlagged ? 'flagged' : ''}" onclick="event.stopPropagation(); toggleFlag('${item.id}')">🚩</button>
-              </div>
-            </div>
-            <div class="expanded-content">
-              <div class="expanded-body">
-                <div class="notes-section">
-                  <div class="notes-label">Platform Notes</div>
-                  <div class="notes-text">${item.notes || "No notes"}</div>
-                </div>
-                <div class="notes-section">
-                  <div class="notes-label">Your Notes</div>
-                  <textarea class="notes-textarea" placeholder="Add your notes..." onchange="saveNotes('${item.id}', this.value)">${userNotes}</textarea>
-                </div>
-              </div>
-            </div>
-          </div>
-        `;
-      }).join("");
-
-      container.querySelectorAll(".card").forEach(card => {
-        card.addEventListener("click", function(e) {
-          if (!e.target.closest(".flag-btn") && !e.target.closest("textarea")) {
-            toggleExpanded(this);
-          }
-        });
-      });
-    }
-
-    function renderFacebookGroups() {
-      const groups = appData.listings.filter(l => l.category === "facebook_group");
-      const container = document.getElementById("facebookGroupsContainer");
-
-      if (groups.length === 0) {
-        container.innerHTML = '<div class="empty-state">No Facebook groups configured</div>';
-        return;
+      if (diff === 0) {
+        text.textContent = 'Updated just now';
+      } else if (diff === 1) {
+        text.textContent = 'Updated 1 min ago';
+      } else if (diff < 60) {
+        text.textContent = `Updated ${diff} min ago`;
+      } else if (diff < 120) {
+        text.textContent = 'Updated 1h ago';
+      } else {
+        text.textContent = `Updated ${Math.floor(diff / 60)}h ago`;
       }
 
-      container.innerHTML = groups.map(item => {
-        const isFlagged = Storage.isFlagged(item.id);
-        const userNotes = Storage.getNotes(item.id);
-        return `
-          <div class="card list-item" data-id="${item.id}">
-            <div class="item-header" onclick="toggleExpanded(this.closest('.card'))">
-              <div class="item-left">
-                <div class="item-name">${item.name}</div>
-                <div class="item-detail">${item.detail}</div>
-              </div>
-              <div class="item-right">
-                ${createStatusDot(item.status).outerHTML}
-                <button class="flag-btn ${isFlagged ? 'flagged' : ''}" onclick="event.stopPropagation(); toggleFlag('${item.id}')">🚩</button>
-              </div>
-            </div>
-            <div class="expanded-content">
-              <div class="expanded-body">
-                <div class="notes-section">
-                  <div class="notes-label">Group Notes</div>
-                  <div class="notes-text">${item.notes || "No notes"}</div>
-                </div>
-                <div class="notes-section">
-                  <div class="notes-label">Your Notes</div>
-                  <textarea class="notes-textarea" placeholder="Add your notes..." onchange="saveNotes('${item.id}', this.value)">${userNotes}</textarea>
-                </div>
-              </div>
-            </div>
-          </div>
-        `;
-      }).join("");
-
-      container.querySelectorAll(".card").forEach(card => {
-        card.addEventListener("click", function(e) {
-          if (!e.target.closest(".flag-btn") && !e.target.closest("textarea")) {
-            toggleExpanded(this);
-          }
-        });
-      });
-    }
-
-    function renderProspects() {
-      const { prospects } = appData;
-      const container = document.getElementById("prospectsContainer");
-
-      if (prospects.length === 0) {
-        container.innerHTML = '<div class="empty-state">No prospects yet</div>';
-        return;
+      // Staleness warning
+      if (diff > 120) {
+        text.classList.add('very-stale');
+      } else if (diff > 90) {
+        text.classList.add('stale');
+      } else {
+        text.classList.remove('stale', 'very-stale');
       }
-
-      container.innerHTML = prospects.map(prospect => {
-        const isFlagged = Storage.isFlagged(prospect.id);
-        const userNotes = Storage.getNotes(prospect.id);
-        const statusClass = prospect.status.toLowerCase();
-        return `
-          <div class="card list-item ${prospect.active ? '' : 'prospect-archived'}" data-id="${prospect.id}" style="opacity: ${prospect.active ? '1' : '0.5'}">
-            <div class="item-header" onclick="toggleExpanded(this.closest('.card'))">
-              <div class="item-left">
-                <div class="item-name">
-                  <span class="prospect-badge ${statusClass}">${prospect.status}</span>
-                  ${prospect.name}
-                </div>
-                <div class="item-detail prospect-source">${prospect.source} · ${prospect.date}</div>
-                ${prospect.actionNeeded ? `<div class="item-detail" style="color: #f97316; margin-top: 4px;">${prospect.actionNeeded}</div>` : ''}
-              </div>
-              <div class="item-right">
-                <button class="flag-btn ${isFlagged ? 'flagged' : ''}" onclick="event.stopPropagation(); toggleFlag('${prospect.id}')">🚩</button>
-              </div>
-            </div>
-            <div class="expanded-content">
-              <div class="expanded-body">
-                <div class="notes-section">
-                  <div class="notes-label">Prospect Notes</div>
-                  <div class="notes-text">${prospect.notes || "No notes"}</div>
-                </div>
-                <div class="notes-section">
-                  <div class="notes-label">Your Notes</div>
-                  <textarea class="notes-textarea" placeholder="Add your notes..." onchange="saveNotes('${prospect.id}', this.value)">${userNotes}</textarea>
-                </div>
-              </div>
-            </div>
-          </div>
-        `;
-      }).join("");
-
-      container.querySelectorAll(".card").forEach(card => {
-        card.addEventListener("click", function(e) {
-          if (!e.target.closest(".flag-btn") && !e.target.closest("textarea")) {
-            toggleExpanded(this);
-          }
-        });
-      });
-    }
-
-    function renderTours() {
-      const { tours } = appData;
-      const container = document.getElementById("toursContainer");
-
-      if (!tours.scheduled || tours.scheduled.length === 0) {
-        container.innerHTML = '<div class="empty-state">No tours scheduled</div>';
-        return;
-      }
-
-      container.innerHTML = tours.scheduled.map(tour => `
-        <div class="card list-item">
-          <div class="item-name">${tour.name}</div>
-          <div class="item-detail">${tour.date} at ${tour.time}</div>
-        </div>
-      `).join("");
-    }
-
-    function renderSystem() {
-      const { system } = appData;
-      const container = document.getElementById("systemContainer");
-      container.innerHTML = system.map(item => {
-        const isFlagged = Storage.isFlagged(item.name);
-        return `
-          <div class="card list-item" data-id="${item.name}">
-            <div class="item-header">
-              <div class="item-left">
-                <div class="item-name">${item.name}</div>
-                <div class="item-detail">${item.detail}</div>
-              </div>
-              <div class="item-right">
-                ${createStatusDot(item.status).outerHTML}
-                <button class="flag-btn ${isFlagged ? 'flagged' : ''}" onclick="event.stopPropagation(); toggleFlag('${item.name}')">🚩</button>
-              </div>
-            </div>
-          </div>
-        `;
-      }).join("");
-
-      container.querySelectorAll(".flag-btn").forEach(btn => {
-        btn.addEventListener("click", function(e) {
-          e.stopPropagation();
-        });
-      });
-    }
-
-    function renderLog() {
-      const { log } = appData;
-      let html = `
-        <div class="log-section">
-          <div class="log-label">Worked</div>
-          ${log.worked.map(item => `<div class="log-item">${item}</div>`).join("")}
-        </div>
-        <div class="log-section">
-          <div class="log-label">Failed</div>
-          ${log.failed.map(item => `<div class="log-item">${item}</div>`).join("")}
-        </div>
-        <div class="log-section">
-          <div class="log-label">Next Improvement</div>
-          <div style="padding: 8px; background: rgba(255, 255, 255, 0.02); border-radius: 4px; font-size: 12px;">${log.improvement}</div>
-        </div>
-        <div class="log-section">
-          <div class="log-label">Metrics</div>
-          ${Object.entries(log.metrics).map(([key, val]) => `<div class="log-item"><strong>${key}:</strong> ${val}</div>`).join("")}
-        </div>
-      `;
-      document.getElementById("logSummaryContent").innerHTML = html;
-    }
-
-    // ============================================================================
-    // EVENT HANDLERS
-    // ============================================================================
-
-    function saveNotes(itemId, text) {
-      Storage.setNotes(itemId, text);
-    }
-
-    function toggleFlag(itemId) {
-      Storage.toggleFlag(itemId);
-      render();
-    }
-
-    function toggleDone(itemId) {
-      Storage.toggleDone(itemId);
-      render();
-    }
-
-    function scrollToTop() {
-      document.getElementById("main").scrollTop = 0;
-    }
-
-    function loadData() {
-      fetch("data.json")
-        .then(res => res.json())
-        .then(data => {
-          appData = data;
-          render();
-        })
-        .catch(() => {
-          // Use sample data on error
-          appData = SAMPLE_DATA;
-          render();
-        });
     }
 
     function render() {
+      if (!appState.data) return;
+
       renderHeader();
       renderRooms();
       renderStats();
+      renderProspectSpotlight();
+      renderWhatsNew();
       renderActions();
       renderListings();
       renderFacebookGroups();
-      renderProspects();
-      renderTours();
-      renderSystem();
-      renderLog();
+      renderSystemStatus();
+
+      // Update timestamp periodically
+      setInterval(updateLastUpdatedTime, 30000);
     }
 
-    // ============================================================================
-    // INITIALIZATION
-    // ============================================================================
+    function renderHeader() {
+      const data = appState.data;
+      document.getElementById('property-subtitle').textContent =
+        data.property.subtitle + ' · ' + data.property.address;
+    }
 
-    function init() {
-      // Load data
-      loadData();
+    function renderRooms() {
+      const container = document.getElementById('rooms-container');
+      container.innerHTML = '';
 
-      // Setup navigation
-      document.getElementById("navDash").addEventListener("click", scrollToTop);
+      appState.data.property.rooms.forEach(room => {
+        const pill = document.createElement('div');
+        pill.className = 'room-pill';
+        pill.innerHTML = `
+          <div class="room-pill-name">${room.name}</div>
+          <div class="room-pill-meta">$${room.price}/mo · ${room.availableDate}</div>
+        `;
+        container.appendChild(pill);
+      });
+    }
 
-      // Setup log toggle
-      document.getElementById("logContainer").addEventListener("click", function() {
-        const content = this.querySelector(".expanded-content");
-        if (content) {
-          content.classList.toggle("active");
+    function renderStats() {
+      const stats = appState.data.stats;
+      document.getElementById('stat-live').textContent = stats.live;
+      document.getElementById('stat-pending').textContent = stats.pending;
+      document.getElementById('stat-prospects').textContent = stats.prospects;
+      document.getElementById('stat-actions').textContent = stats.actions;
+    }
+
+    function renderProspectSpotlight() {
+      const container = document.getElementById('prospect-section');
+      const activeProspects = appState.data.prospects.filter(p => p.active);
+
+      if (activeProspects.length === 0) {
+        container.innerHTML = '<div class="empty-state">No active prospects</div>';
+        return;
+      }
+
+      container.innerHTML = `<h2 class="section-title">Active Prospects</h2>`;
+
+      const prospectsHtml = document.createElement('div');
+      prospectsHtml.className = 'prospects-container';
+
+      activeProspects.forEach(prospect => {
+        const statusClass = prospect.status === 'SCREENING' ? 'screening' :
+                          prospect.status === 'RESPONDED' ? 'responded' : 'qualified';
+
+        // Build profile summary
+        const profile = prospect.profile || 'Profile pending';
+        const matchAssessment = prospect.matchAssessment || 'Not yet assessed';
+        const lastMessage = prospect.lastMessage || 'No messages yet';
+        const conversationStage = prospect.conversationStage || 'Initial contact';
+
+        // Determine match bar fill level
+        let matchLevel = 0.7; // default
+        let matchClass = '';
+        if (matchAssessment.includes('excellent') || matchAssessment.includes('excellent')) {
+          matchLevel = 0.9;
+          matchClass = '';
+        } else if (matchAssessment.includes('good')) {
+          matchLevel = 0.75;
+          matchClass = '';
+        } else if (matchAssessment.includes('ok') || matchAssessment.includes('moderate')) {
+          matchLevel = 0.5;
+          matchClass = 'ok';
+        } else if (matchAssessment.includes('poor') || matchAssessment.includes('weak')) {
+          matchLevel = 0.3;
+          matchClass = 'poor';
         }
+
+        const card = document.createElement('div');
+        card.className = 'prospect-card';
+        card.innerHTML = `
+          <div class="prospect-header">
+            <div class="prospect-name">${prospect.name}</div>
+            <span class="prospect-status-badge ${statusClass}">${prospect.status}</span>
+          </div>
+
+          <div class="prospect-profile">
+            ${profile}
+          </div>
+
+          <div class="prospect-match">
+            <div class="prospect-match-label">
+              <span>Match Quality</span>
+              <span>${matchAssessment}</span>
+            </div>
+            <div class="match-bar">
+              <div class="match-bar-fill ${matchClass}" style="width: ${matchLevel * 100}%"></div>
+            </div>
+          </div>
+
+          <div class="prospect-message">
+            "${lastMessage}"
+          </div>
+
+          <div class="prospect-conversation">
+            ${conversationStage}
+          </div>
+
+          <div class="prospect-action">
+            🔔 ${prospect.actionNeeded}
+          </div>
+        `;
+
+        prospectsHtml.appendChild(card);
       });
 
-      // Auto-refresh every 5 minutes
-      setInterval(() => {
-        loadData();
-      }, 5 * 60 * 1000);
+      container.appendChild(prospectsHtml);
     }
 
-    // Start app when DOM is ready
-    if (document.readyState === "loading") {
-      document.addEventListener("DOMContentLoaded", init);
-    } else {
-      init();
+    function renderWhatsNew() {
+      const container = document.getElementById('whats-new-section');
+      const log = appState.data.log;
+
+      if (!log || (!log.worked || log.worked.length === 0) && (!log.failed || log.failed.length === 0)) {
+        container.innerHTML = '';
+        return;
+      }
+
+      let html = `
+        <h2 class="section-title">What's New</h2>
+        <div class="whats-new">
+          <div class="whats-new-title">Latest Updates from ${log.date}</div>
+          <div class="whats-new-list">
+      `;
+
+      if (log.worked && log.worked.length > 0) {
+        log.worked.slice(0, 3).forEach(item => {
+          html += `
+            <div class="whats-new-item success">
+              <div class="whats-new-item-icon">✓</div>
+              <div class="whats-new-item-text">${item}</div>
+            </div>
+          `;
+        });
+      }
+
+      if (log.failed && log.failed.length > 0) {
+        log.failed.slice(0, 2).forEach(item => {
+          html += `
+            <div class="whats-new-item failure">
+              <div class="whats-new-item-icon">✕</div>
+              <div class="whats-new-item-text">${item}</div>
+            </div>
+          `;
+        });
+      }
+
+      html += `
+          </div>
+        </div>
+      `;
+
+      container.innerHTML = html;
     }
+
+    function renderActions() {
+      const container = document.getElementById('actions-section');
+      const actions = appState.data.actions || [];
+
+      if (actions.length === 0) {
+        container.innerHTML = '';
+        return;
+      }
+
+      let html = '<h2 class="section-title">Action Items</h2><div class="actions-container">';
+
+      actions.forEach(action => {
+        html += `
+          <div class="action-item">
+            <div class="action-priority">${action.icon} ${action.priority}</div>
+            <div class="action-text">${action.text}</div>
+          </div>
+        `;
+      });
+
+      html += '</div>';
+      container.innerHTML = html;
+    }
+
+    function renderListings() {
+      const container = document.getElementById('listings-section');
+      const listings = appState.data.listings || [];
+      const platforms = listings.filter(l => l.category === 'platform');
+
+      if (platforms.length === 0) return;
+
+      let html = '<h2 class="section-title">Platforms</h2>';
+
+      platforms.forEach((listing, idx) => {
+        const isOpen = appState.expandedSections[listing.id] || false;
+        const statusDot = `<span class="status-dot ${listing.status}"></span>`;
+
+        html += `
+          <div class="accordion-group">
+            <button class="accordion-header" onclick="toggleAccordion('${listing.id}')">
+              <span>${statusDot}${listing.name}</span>
+              <span class="accordion-toggle ${isOpen ? 'open' : ''}">›</span>
+            </button>
+            <div class="accordion-content ${isOpen ? 'open' : ''}" id="content-${listing.id}">
+              <div class="accordion-detail">${listing.detail}</div>
+            </div>
+          </div>
+        `;
+      });
+
+      container.innerHTML = html;
+    }
+
+    function renderFacebookGroups() {
+      const container = document.getElementById('facebook-groups-section');
+      const listings = appState.data.listings || [];
+      const fbGroups = listings.filter(l => l.category === 'facebook_group');
+
+      if (fbGroups.length === 0) return;
+
+      const live = fbGroups.filter(l => l.status === 'live').length;
+      const pending = fbGroups.filter(l => l.status === 'pending').length;
+      const warn = fbGroups.filter(l => l.status === 'warn').length;
+
+      let html = `
+        <h2 class="section-title">Facebook Groups</h2>
+        <div class="accordion-group">
+          <button class="accordion-header" onclick="toggleAccordion('fb-groups')">
+            <span><span class="status-dot live"></span>Facebook Groups</span>
+            <span class="accordion-toggle ${appState.expandedSections['fb-groups'] ? 'open' : ''}">›</span>
+          </button>
+          <div class="accordion-content ${appState.expandedSections['fb-groups'] ? 'open' : ''}" id="content-fb-groups">
+            <div class="accordion-detail">
+              <div class="facebook-groups-summary">
+                <strong>${live}</strong> live · <strong>${pending}</strong> pending · <strong>${warn}</strong> needs action
+              </div>
+      `;
+
+      fbGroups.forEach(group => {
+        const statusDot = `<span class="status-dot ${group.status}"></span>`;
+        html += `
+          <div style="padding: 10px 0; border-top: 1px solid #1a1a1a; font-size: 11px;">
+            ${statusDot}<strong>${group.name}</strong><br/>
+            <span style="color: #666;">${group.detail}</span>
+          </div>
+        `;
+      });
+
+      html += `
+            </div>
+          </div>
+        </div>
+      `;
+
+      container.innerHTML = html;
+    }
+
+    function renderSystemStatus() {
+      const container = document.getElementById('system-section');
+      const systems = appState.data.system || [];
+
+      if (systems.length === 0) return;
+
+      let html = '<h2 class="section-title">System Status</h2><div class="system-status">';
+
+      systems.forEach(sys => {
+        html += `
+          <div class="system-item">
+            <div>
+              <div class="system-item-name">${sys.name}</div>
+              <div style="color: #666; font-size: 10px; margin-top: 2px;">${sys.detail}</div>
+            </div>
+            <span class="system-item-status ${sys.status}">${sys.status.toUpperCase()}</span>
+          </div>
+        `;
+      });
+
+      html += '</div>';
+      container.innerHTML = html;
+    }
+
+    function toggleAccordion(id) {
+      appState.expandedSections[id] = !appState.expandedSections[id];
+      const content = document.getElementById(`content-${id}`);
+      const toggle = content?.parentElement?.querySelector('.accordion-toggle');
+
+      if (content) {
+        content.classList.toggle('open');
+      }
+      if (toggle) {
+        toggle.classList.toggle('open');
+      }
+    }
+
+    // Pull-to-refresh gesture
+    let touchStartY = 0;
+    document.addEventListener('touchstart', (e) => {
+      touchStartY = e.touches[0].clientY;
+    });
+
+    document.addEventListener('touchmove', (e) => {
+      if (document.querySelector('main').scrollTop === 0) {
+        const touchCurrentY = e.touches[0].clientY;
+        const diff = touchCurrentY - touchStartY;
+
+        if (diff > 60) {
+          refreshData();
+          touchStartY = touchCurrentY; // Reset to prevent multiple triggers
+        }
+      }
+    });
   </script>
 </body>
 </html>
