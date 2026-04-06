@@ -21,7 +21,7 @@
   "stats": {
     "live": 13,
     "pending": 1,
-    "prospects": 3,
+    "prospects": 5,
     "actions": 2
   },
   "actions": [
@@ -211,6 +211,32 @@
       "active": true
     },
     {
+      "id": "prsp-12",
+      "name": "Julius",
+      "source": "Facebook Groups",
+      "status": "ACTIVE - TOUR SCHEDULING",
+      "date": "04/06/2026",
+      "profile": "PhD student at UC Berkeley. Found listing via Facebook post. Interested in room starting Aug 1.",
+      "matchAssessment": "STRONG - Berkeley PhD student = stable 5+ year funding. Aug 1 move-in aligns perfectly. Active searcher via Facebook groups.",
+      "lastMessage": "Julius texted 04/06 12:03 PM asking about tour. Mike replied proposing Sunday in-person. Awaiting confirmation.",
+      "conversationStage": "Initial exchange via iMessage. Tour proposed for Sunday. Screening questions still needed.",
+      "actionNeeded": "Awaiting Julius's reply. No action needed unless no response by Monday.",
+      "active": true
+    },
+    {
+      "id": "prsp-13",
+      "name": "Jack Boyd",
+      "source": "Facebook/Craigslist",
+      "status": "ACTIVE - TOUR SCHEDULING",
+      "date": "04/06/2026",
+      "profile": "Incoming grad student at UC Berkeley. Currently back east. Wants virtual tour/FaceTime.",
+      "matchAssessment": "STRONG - Incoming Berkeley grad student = stable funding. Polite, specific inquiry. Virtual tour appropriate since out of state.",
+      "lastMessage": "Jack texted 04/06 11:20 AM asking about virtual tour. Mike replied proposing Sunday. Awaiting confirmation.",
+      "conversationStage": "Initial exchange via iMessage. Tour proposed for Sunday. Screening questions still needed.",
+      "actionNeeded": "Awaiting Jack's reply. No action needed unless no response by Monday.",
+      "active": true
+    },
+    {
       "id": "prsp-2",
       "name": "Patricia",
       "source": "Facebook Marketplace",
@@ -326,8 +352,8 @@
       "All 6 platforms audited — all confirmed LIVE",
       "Zillow bot detection RESOLVED — logged in and checked, no new leads",
       "7 FB groups reposted (~525K combined member reach)",
-      "3 active prospects: Julian (SpareRoom, TOUR SCHEDULING), Thomas (CL, LBL scientist), Jan (CL, UC Berkeley postdoc)",
-      "Pipeline grew 200% (1 → 3 active prospects) — best pipeline quality since launch",
+      "5 active prospects: Julian (SpareRoom), Thomas (CL, LBL scientist), Jan (CL, postdoc), Julius (FB, PhD), Jack Boyd (FB, grad student)",
+      "Pipeline grew 400% (1 → 5 active prospects) — best pipeline quality since launch",
       "Competitor analysis complete: $1,650 pricing justified, no changes needed",
       "All tracker files updated (prospects.md, listing_copy.md, system_log.md)"
     ],
@@ -340,7 +366,7 @@
     "metrics": {
       "live": 13,
       "pending": 1,
-      "prospects_active": 3,
+      "prospects_active": 5,
       "prospects_archived": 8,
       "actions_urgent": 0
     }
